@@ -356,26 +356,24 @@ void writeTonPlace(string& f, int place, taxi& t) {
 
 
 void testPlik() {
-	string s,ss;
+	string s="testq.txt", ss="testqQQQQ.bin";
 	ifstream in;
 	ofstream out;
-	cout << "Enter file name (read from)" << endl;
-	cin >> s;
-	in.open(s);
+	cout << "reading from testq.txt" << endl;
+	in.open("testq.txt");
 	cout << "Got Text:" << endl;
 	printFile(in);
 	in.close();
 	in.open(s);
 
-	cout << "Enter file name (write to)" << endl;
-	cin >> ss;
+	cout << "writing to "+ss << endl;
 	out.open(ss, ios_base::binary);
 	textToBin(in, out);
 	cout << "Got Bin" << endl;
 	printBin(ss);
 
 	in.close(); out.close();
-
-
+	//todo: test on files
+	cout<<"Edding taxi: 54 0 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
 
 }
