@@ -19,7 +19,6 @@ void formTAbleFromFile(HashTale& hh, string filename) {
 	for (int i = 0; i < n; i++) {
 		readBinAddTab1(hh, i, filename);
 	}
-
 }
 
 void delTAbleDelPlikID(int id, HashTale& ht, string filename) {

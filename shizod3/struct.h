@@ -123,7 +123,6 @@ int getCountLineBin(ifstream& in) {
 		in.seekg(q * (int)sizeof(tt), ios::beg);
 		in.read((char*)&tt, sizeof(tt));
 		q++;
-		cout << in.tellg() << endl;
 	}
 	return q - 1;
 }
@@ -355,7 +354,7 @@ void writeTonPlace(string& f, int place, taxi& t) {
 }
 
 
-void testPlik() {
+void testBinF() {
 	string s="testq.txt", ss="testqQQQQ.bin";
 	ifstream in;
 	ofstream out;
@@ -370,10 +369,16 @@ void testPlik() {
 	out.open(ss, ios_base::binary);
 	textToBin(in, out);
 	cout << "Got Bin" << endl;
+	out.close();
+	in.close();
 	printBin(ss);
 
 	in.close(); out.close();
-	//todo: test on files
-	cout<<"Edding taxi: 54 0 wwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww"
-
+	string t = "157 1                                              ";
+	cout << "Adding taxi: 157 1                                               to 9th pos" << endl;
+	taxi wrfwfe;
+	wrfwfe.id = 157;
+	wrfwfe.isInGarage = 1;
+	writeTonPlace(ss, 8, wrfwfe);
+	printBin(ss);
 }

@@ -4,6 +4,7 @@
 #include "struct.h"
 #include "hash.h"
 #include "plikDaTabela.h"
+#include <chrono>
 using namespace std;
 int main()
 {
@@ -39,10 +40,50 @@ int main()
 	//printBin(in);
 	//in.close();
 
-	HashTale rgerhgerhr("testHAsh.bin");
-	rgerhgerhr.testHeshT();
+	//HashTale rgerhgerhr("testHAsh.bin");
+	//rgerhgerhr.testHeshT();
 
+	//testBinF();
+	ifstream innn("degrodation_test.txt");
+	ofstream oooo("NewBin.bin", ios_base::binary);
+
+	textToBin(innn, oooo);
+	innn.close();
+	oooo.close();
+
+	HashTale hhhh("NewBin.bin");
+
+	formTAbleFromFile(hhhh, "NewBin.bin");
+	taxi wefew;
+
+//	chrono::steady_clock sc;   // create an object of `steady_clock` class
+	//auto start = sc.now();     // start timer
+
+	getelem(1, wefew, hhhh);
+	cout << reinterpret_cast<char*>(&wefew), sizeof(taxi);
+
+	//auto end = sc.now();       // end timer (starting & ending is done by measuring the time at the moment the process started & ended respectively)
+	//auto time_span = chrono::microseconds(end - start);   // measure time span between start & end
 	
+	auto start = std::chrono::steady_clock::now();
+	getelem(1, wefew, hhhh);
+	auto end = std::chrono::steady_clock::now();
+	auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
+	std::cout << "Time = " << elapsed.count() << endl;
+
+
+	 start = std::chrono::steady_clock::now();
+	getelem(150000, wefew, hhhh);
+	 end = std::chrono::steady_clock::now();
+	 elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
+	std::cout << "Time = " << elapsed.count() << endl;
+
+
+	 start = std::chrono::steady_clock::now();
+	getelem(490000, wefew, hhhh);
+	 end = std::chrono::steady_clock::now();
+	 elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
+	std::cout << "Time = " << elapsed.count() << endl;
 
 	//in.open("testq.txt");
 	//HashTale ta("testHAsh.bin");
