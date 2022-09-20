@@ -40,10 +40,6 @@ void printFile(ifstream& in) {
 		cout << n << endl;
 	}
 }
-void addAstrigToEnd(ofstream& out, string name, string st) {
-	out.open(name, ios::app | ios::ate);
-	out << endl << st;
-}
 
 void binToText(ifstream& in, ofstream& out) {
 	taxi tt(1);
@@ -358,3 +354,28 @@ void writeTonPlace(string& f, int place, taxi& t) {
 	file.close();
 }
 
+
+void testPlik() {
+	string s,ss;
+	ifstream in;
+	ofstream out;
+	cout << "Enter file name (read from)" << endl;
+	cin >> s;
+	in.open(s);
+	cout << "Got Text:" << endl;
+	printFile(in);
+	in.close();
+	in.open(s);
+
+	cout << "Enter file name (write to)" << endl;
+	cin >> ss;
+	out.open(ss, ios_base::binary);
+	textToBin(in, out);
+	cout << "Got Bin" << endl;
+	printBin(ss);
+
+	in.close(); out.close();
+
+
+
+}

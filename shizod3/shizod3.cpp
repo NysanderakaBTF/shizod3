@@ -3,6 +3,7 @@
 #include <string>
 #include "struct.h"
 #include "hash.h"
+#include "plikDaTabela.h"
 using namespace std;
 int main()
 {
@@ -38,38 +39,28 @@ int main()
 	//printBin(in);
 	//in.close();
 
-	in.open("testq.txt");
-	taxi tt(1);
-	HashTale ta("testHAsh.bin");
-	char k;
-	while (in >> tt.id)
-	{
-		in >> tt.isInGarage;
-		in.get(k);
-		for (int i = 0; i < 40; i++) {
-			in.get(tt.name[i]);
-		}
-		for (int i = 0; i < 5; i++) {
-			in.get(tt.time[i]);
-		}
-		ta.addAndWrite(tt);
+	HashTale rgerhgerhr("testHAsh.bin");
+	rgerhgerhr.testHeshT();
 
-		
-	}
-	ta.PrintTable();
+	
 
-	printBin("testHAsh.bin");
+	//in.open("testq.txt");
+	//HashTale ta("testHAsh.bin");
+	//formTAbleFromFile(ta, "testHAsh.bin");
+	//ta.PrintTable();
 
-	pair<int, int> aaaaaaaa = ta.getelemT(100);
-	cout << aaaaaaaa.first << " " << aaaaaaaa.second << endl;
+	//printBin("testHAsh.bin");
 
-	taxi ergv;
-	ta.getelem(45, ergv);
-	cout << ergv.id << " " << ergv.name << endl;
+	//pair<int, int> aaaaaaaa = ta.getelemT(100);
+	//cout << aaaaaaaa.first << " " << aaaaaaaa.second << endl;
 
-	ta.delID(45);
-	printBin("testHAsh.bin");
-	ta.PrintTable();
+	//taxi ergv;
+	//ta.getelem(45, ergv);
+	//cout << ergv.id << " " << ergv.name << endl;
+
+	//ta.delID(45);
+	//printBin("testHAsh.bin");
+	//ta.PrintTable();
 
 	//cout << "Практическая работа №2   \"Внешние структуры данных: текстовый и двоичный файлы.\". Резников Григорий." << endl << endl;
 	//cout << "Здание 1.1 (1): создание текстового файла кодировки ASCII, содержащего десятичные числа по несколько чисел на строке (all random) \n" <<
