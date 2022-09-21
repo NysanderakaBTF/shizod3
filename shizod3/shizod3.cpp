@@ -9,7 +9,6 @@ using namespace std;
 int main()
 {
 	setlocale(LC_ALL, "rus");
-	string name;
 	string s;
 	string ss;
 	int n, pos, q;
@@ -17,6 +16,7 @@ int main()
 	ifstream in;
 	fstream qqq;
 	taxi t;
+	int i1, i2, i3, i4, i5, i6;
 
 	srand(time(NULL));
 	//in.open("testq.txt");
@@ -44,46 +44,36 @@ int main()
 	//rgerhgerhr.testHeshT();
 
 	//testBinF();
-	ifstream innn("degrodation_test.txt");
-	ofstream oooo("NewBin.bin", ios_base::binary);
 
-	textToBin(innn, oooo);
-	innn.close();
-	oooo.close();
-
-	HashTale hhhh("NewBin.bin");
-
-	formTAbleFromFile(hhhh, "NewBin.bin");
-	taxi wefew;
 
 //	chrono::steady_clock sc;   // create an object of `steady_clock` class
 	//auto start = sc.now();     // start timer
 
-	getelem(1, wefew, hhhh);
-	cout << reinterpret_cast<char*>(&wefew), sizeof(taxi);
+	//getelem(1, wefew, hhhh);
+	//cout << reinterpret_cast<char*>(&wefew), sizeof(taxi);
 
 	//auto end = sc.now();       // end timer (starting & ending is done by measuring the time at the moment the process started & ended respectively)
 	//auto time_span = chrono::microseconds(end - start);   // measure time span between start & end
-	
-	auto start = std::chrono::steady_clock::now();
-	getelem(1, wefew, hhhh);
-	auto end = std::chrono::steady_clock::now();
-	auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
-	std::cout << "Time = " << elapsed.count() << endl;
+	//
+	//auto start = std::chrono::steady_clock::now();
+	//getelem(1, wefew, hhhh);
+	//auto end = std::chrono::steady_clock::now();
+	//auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
+	//std::cout << "Time = " << elapsed.count() << endl;
 
 
-	 start = std::chrono::steady_clock::now();
-	getelem(150000, wefew, hhhh);
-	 end = std::chrono::steady_clock::now();
-	 elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
-	std::cout << "Time = " << elapsed.count() << endl;
+	// start = std::chrono::steady_clock::now();
+	//getelem(150000, wefew, hhhh);
+	// end = std::chrono::steady_clock::now();
+	// elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
+	//std::cout << "Time = " << elapsed.count() << endl;
 
 
-	 start = std::chrono::steady_clock::now();
-	getelem(490000, wefew, hhhh);
-	 end = std::chrono::steady_clock::now();
-	 elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
-	std::cout << "Time = " << elapsed.count() << endl;
+	// start = std::chrono::steady_clock::now();
+	//getelem(490000, wefew, hhhh);
+	// end = std::chrono::steady_clock::now();
+	// elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
+	//std::cout << "Time = " << elapsed.count() << endl;
 
 	//in.open("testq.txt");
 	//HashTale ta("testHAsh.bin");
@@ -103,351 +93,378 @@ int main()
 	//printBin("testHAsh.bin");
 	//ta.PrintTable();
 
-	//cout << "Практическая работа №2   \"Внешние структуры данных: текстовый и двоичный файлы.\". Резников Григорий." << endl << endl;
-	//cout << "Здание 1.1 (1): создание текстового файла кодировки ASCII, содержащего десятичные числа по несколько чисел на строке (all random) \n" <<
-	//	"Здание 1.2 (2): вывод содержимого текстового файла.\n" <<
-	//	"Здание 1.3 (3): добавление новой строки в конец файла.\n" <<
-	//	"Здание 1.4 (4): прочитать значение числа, указав его порядковый номер в файле, и вернуть его значение\n" <<
-	//	"Здание 1.5 (5): определить количество чисел в файле\n" <<
-	//	"Здание 1.6 (6): Создать новый файл из значений исходного, размещая на строке значения: количество чисел до конца строки, сами числа через пробел.\n" <<
-	//	"Здание 2.1 (7): преобразование тестовых данных из текстового файла в двоичный файл\n" <<
-	//	"Здание 2.2 (8): преобразование данных из двоичного файла в текстовый\n" <<
-	//	"Здание 2.3 (9): вывод всех записей двоичного файла\n" <<
-	//	"Здание 2.4 (10): доступ к записи по ее порядковому номеру в файле, используя механизм прямого доступа к записи в двоичном файле (запист в переменную, для демонтрации они выводится)\n" <<
-	//	"Здание 2.5 (11): удаление записи с заданным значением ключа, выполнить путем замены на последнюю запись\n" <<
-	//	"Здание 2.6 (12): Сформировать список машин, находящихся в гараже. Полученные данные записать в двоичный файл с той же структурой\n" <<
-	//	"Здание 2.7 (13): Обновить сведения о машине при выезде из гаража\n" <<
-	//	endl;
-	//cout << "Введите номер задания" << endl;
-	//int ta;
-	//cin >> ta;
-	//switch (ta)
-	//{
-	//case 1:
-	//	cout << "Enter file name" << endl;
-	//	cin >> s;
-	//	out.open(s);
-	//	if (!out.bad())
-	//		createRandomFile(out);
-	//	else
-	//		cout << "Something went whong" << endl;
-	//	if (!out.good()) {
-	//		cout << "Something went whong again, but stream is closed" << endl;
-	//		out.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong" << endl; out.close();
-	//	}
-	//	break;
-	//case 2:
-	//	cout << "Enter file name" << endl;
-	//	cin >> s;
-	//	in.open(s);
-	//	if (in.is_open())
-	//		printFile(in);
-	//	else
-	//		cout << "Something went whong" << endl;
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong" << endl; in.close();
-	//	}
-	//	break;
-	//case 3:
-	//	/*cin.clear();
-	//	fflush(stdin);*/
-	//	cout << "Enter string" << endl;
-	//	getline(cin, ss);
-	//	getline(cin, ss);
-	//	cout << "Enter file name" << endl;
-	//	cin >> s;
+	cout << "Практическая работа №3 \"Применение хеш-таблицы для поиска данных в двоичном файле с записями фиксированной длины.\". Резников Григорий." << endl << endl;
+	cout << " (1): тестирование получения хеша \n" <<
+		" (2): вставить в таблицу ключ\n" <<
+		" (3): удалить ключ из таблицы\n" <<
+		" (4): найти ключ в таблице\n" <<
+		" (5): рехешировать таблицу\n" <<
+		" (6): тестирование операций управления хеш-таблицей\n" <<
+		" (7): вывод таблицы\n" <<
 
-	//	out.open(s, ios::app);
-	//	if (!out.bad()) {
-	//		out.close();
-	//		addAstrigToEnd(out, s, ss);
-	//	}
-	//	else
-	//		cout << "Something went whong";
-	//	if (!out.good()) {
-	//		cout << "Something went whong again, but stream is closed" << endl;
-	//		out.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong" << endl; out.close();
-	//	}
-	//	break;
-	//case 4:
-	//	cout << "Enter file name" << endl;
-	//	cin >> s;
-	//	cout << "Enter number position" << endl;
-	//	cin >> n;
-	//	in.open(s);
-	//	if (in.is_open()) {
-	//		q = getValByNumber(in, n);
-	//		if (q != NULL) {
-	//			cout << q << endl;
-	//		}
-	//		else cout << "Wrong position" << endl;
-	//	}
-	//	else
-	//		cout << "Something went whong" << endl;
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong" << endl; in.close();
-	//	}
-	//	break;
-	//case 5:
-	//	cout << "Enter file name" << endl;
-	//	cin >> s;
-	//	in.open(s);
-	//	if (in.is_open())
-	//		cout << getTotalNumbers(in) << endl;
-	//	else
-	//		cout << "Something went whong" << endl;
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong" << endl; in.close();
-	//	}
-	//	break;
-	//case 6:
-	//	cout << "Enter file name (read from)" << endl;
-	//	cin >> s;
-	//	in.open(s);
-	//	if (in.is_open()) {
-	//		cout << "Enter file name (write to)" << endl;
-	//		cin >> s;
-	//		out.open(s);
-	//		if (!out.bad())
-	//			task191(in, out);
-	//		else {
-	//			cout << "Something went whong" << endl;
-	//		}
-	//	}
-	//	else {
-	//		cout << "Something went whong" << endl;
-	//	}
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but input stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong, input stream is closed" << endl; in.close();
-	//	}
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but output stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong, output stream is closed" << endl; in.close();
-	//	}
-	//	break;
-	//case 7:
-	//	cout << "Enter file name (read from)" << endl;
-	//	cin >> s;
-	//	in.open(s);
-	//	if (in.is_open()) {
-	//		cout << "Enter file name (write to)" << endl;
-	//		cin >> s;
-	//		out.open(s, ios_base::binary);
-	//		if (!out.bad())
-	//			textToBin(in, out);
-	//		else {
-	//			cout << "Something went whong" << endl;
-	//		}
-	//	}
-	//	else {
-	//		cout << "Something went whong" << endl;
-	//	}
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but input stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong, input stream is closed" << endl; in.close();
-	//	}
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but output stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong, output stream is closed" << endl; in.close();
-	//	}
-	//	break;
-	//case 8:
-	//	cout << "Enter file name (read from)" << endl;
-	//	cin >> s;
-	//	in.open(s, ios_base::binary);
-	//	if (in.is_open()) {
-	//		cout << "Enter file name (write to)" << endl;
-	//		cin >> s;
-	//		out.open(s);
-	//		if (!out.bad())
-	//			binToText(in, out);
-	//		else {
-	//			cout << "Something went whong" << endl;
-	//		}
-	//	}
-	//	else {
-	//		cout << "Something went whong" << endl;
-	//	}
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but input stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong, input stream is closed" << endl; in.close();
-	//	}
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but output stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong, output stream is closed" << endl; in.close();
-	//	}
-	//	break;
-	//case 9:
-	//	cout << "Enter file name" << endl;
-	//	cin >> s;
-	//	in.open(s, ios_base::binary);
-	//	if (in.is_open())
-	//		printBin(in);
-	//	else
-	//		cout << "Something went whong" << endl;
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong" << endl; in.close();
-	//	}
-	//	break;
-	//case 10:
-	//	cout << "Enter file name" << endl;
-	//	cin >> s;
-	//	cout << "Enter position" << endl;
-	//	cin >> pos;
-	//	in.open(s, ios_base::binary);
-	//	if (in.is_open()) {
-	//		t.id = -1;
-	//		getDataBin(in, pos, t);
-	//		if (t.id != -1) {
-	//			cout << "Taxi info\n";
-	//			cout << t.id << " " << t.isInGarage << " ";
-	//			for (int i = 0; i < 40; i++) {
-	//				cout << t.name[i];
-	//			}
-	//			for (int i = 0; i < 5; i++) {
-	//				cout << t.time[i];
-	//			}
-	//			cout << endl;
-	//		}
-	//		else cout << "Wrong number\n";
-	//	}
-	//	else
-	//		cout << "Something went whong" << endl;
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong" << endl; in.close();
-	//	}
-	//	break;
-	//case 11:
-	//	cout << "Enter file name" << endl;
-	//	cin >> s;
-	//	cout << "Enter key" << endl;
-	//	cin >> pos;
-	//	in.open(s);
-	//	if (in.is_open())
-	//		delLineText(in, pos, s);
-	//	else
-	//		cout << "Something went whong" << endl;
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong" << endl; in.close();
-	//	}
-	//	cout << "File after deletion" << endl;
-	//	in.open(s);
-	//	printFile(in);
-	//	in.close();
-	//	break;
-	//case 12:
-	//	cout << "Enter file name (read from)" << endl;
-	//	cin >> s;
-	//	in.open(s);
-	//	if (in.is_open()) {
-	//		cout << "Enter file name (write to)" << endl;
-	//		cin >> ss;
-	//		out.open(ss);
-	//		if (!out.bad()) {
-	//			out.close();
-	//			getInGarageList(s, ss);
-	//			cout << "\nResult\n";
-	//			in.close();
-	//			in.open(ss);
-	//			printBin(in);
-	//			in.close();
-	//		}
-	//		else {
-	//			cout << "Something went whong" << endl;
-	//		}
-	//	}
-	//	else {
-	//		cout << "Something went whong" << endl;
-	//	}
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but input stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong, input stream is closed" << endl; in.close();
-	//	}
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but output stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong, output stream is closed" << endl; in.close();
-	//	}
-	//	break;
-	//case 13:
-	//	cout << "Enter file name" << endl;
-	//	cin >> s;
-	//	cout << "Enter ID" << endl;
-	//	cin >> pos;
-	//	in.open(s);
-	//	if (in.is_open())
-	//		LeaveGarage(pos, s);
-	//	else
-	//		cout << "Something went whong" << endl;
-	//	if (!in.good()) {
-	//		cout << "Something went whong again, but stream is closed" << endl;
-	//		in.close();
-	//	}
-	//	else {
-	//		cout << "Nothing went whong" << endl; in.close();
-	//	}
-	//	cout << "File after change" << endl;
-	//	in.open(s);
-	//	printFile(in);
-	//	in.close();
-	//	break;
-	//default:
-	//	break;
-	//}
+		" (8): создание двоичного файла из текстового\n" <<
+		" (9): вывод всех записей двоичного файла\n" <<
+		" (10): доступ к записи по ее порядковому номеру в файле, используя механизм прямого доступа к записи в двоичном файле (запист в переменную, для демонтрации они выводится)\n" <<
+		" (11): удаление записи с заданным значением ключа (замена на спец значение тк это оптимально для таблице)\n" <<
+		" (12): добавить запись в двоичный файл (запись на вводимую позицию)\n" <<
+		" (13): Тестирование функций двоичного файла\n" <<
+
+		" (14): Прочитать запись из файла (по номеру) и вставить элемент в таблицу \n" <<
+		" (15): Удалить запись из таблицы при заданном значении ключа и соответственно из файла.\n" <<
+		" (16): Найти запись в файле по значению ключа (найти ключ в хеш-таблице, получить номер записи с этим ключом в файле, выполнить прямой доступ к записи по ее номеру).\n" <<
+		" (17): Тестирование времени доступа (0, 150 000 и 490 000 позиции из полумиллиона)\n" <<
+		endl;
+	cout << "Введите номер задания" << endl;
+	int ta;
+	cout << "For some tests you are working with that file" << endl;
+	ifstream innn("testq.txt");
+	ofstream oooo("testq.bin", ios_base::binary);
+
+	textToBin(innn, oooo);
+	innn.close();
+	oooo.close();
+	printBin("testq.bin");
+	//ifstream innn("degrodation_test.txt");
+	//ofstream oooo("NewBin.bin", ios_base::binary);
+
+	//textToBin(innn, oooo);
+	//innn.close();
+	//oooo.close();
+
+	HashTale* hhhh = new HashTale("NewBin.bin");
+
+	HashTale* aaa = new HashTale("bbbbb.bin", 20);
+
+//	formTAbleFromFile(*hhhh, "NewBin.bin");
+	taxi wefew;
+//	printBin("NewBin.bin");
+
+	pair<int, int> ppppp = make_pair(-1,-1);
+	taxi bbbub(37);
+	bbbub.isInGarage = 0;
+	string name = "wefwefwewefwf";
+	bbbub.name;
+	for (int i = 0; i < name.size(); i++) {
+		bbbub.name[i] = name[i];
+	}
+	cin >> ta;
+	auto start = std::chrono::steady_clock::now();
+	///getelem(1, wefew, hhhh);
+	auto end = std::chrono::steady_clock::now();
+	auto elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
+	switch (ta)
+	{
+	case 1:
+		cout << "Enter test key value" << endl;
+		cin >> i1;
+		cout << "Got hash: " << aaa->hF(i1)<<" for size "<<aaa->tabl.size()<<endl;
+		delete aaa;
+		aaa = new HashTale("bbbbb.bin", 10);
+		cout << "Got hash: " << aaa->hF(i1) << " for size " << aaa->tabl.size() << endl;
+		delete aaa;
+
+		break;
+
+	case 2:
+		aaa = new HashTale("bbbbb.bin", 10);
+
+		cout << "Your table" << endl;
+		aaa->PrintTable();
+
+		cout << "Enter key" << endl;
+		cin >> i1;
+		aaa->add(i1, i1);
+	
+		aaa->PrintTable();
+
+		delete aaa;
+
+		break;
+
+	case 3:
+		cout << "Working with test file" << endl;
+		in.open("testq.txt");
+		out.open("77.bin", ios_base::binary);
+		textToBin(in, out);
+		in.close();
+		out.close();
+		hhhh = new HashTale("77.bin");
+
+		formTAbleFromFile(*hhhh, "77.bin");
+
+		cout << "Your table" << endl;
+		hhhh->PrintTable();
+
+		cout << "Enter key to delete " << endl;
+		cin >> i1;
+
+		hhhh->delIDTabl(i1);
+		cout << "Your table" << endl;
+		hhhh->PrintTable();
+		delete hhhh;
+		break;
+	case 4:
+		cout << "Working with test file" << endl;
+		in.open("testq.txt");
+		out.open("77.bin", ios_base::binary);
+		textToBin(in, out);
+		in.close();
+		out.close();
+		hhhh = new HashTale("77.bin");
+
+		formTAbleFromFile(*hhhh, "77.bin");
+
+		cout << "Enter key to find " << endl;
+		cin >> i1;
+		ppppp = hhhh->getelemT(i1);
+		if (ppppp.first != -1)
+			cout << "ID" << ppppp.first << " position in file " << ppppp.second + 1 << endl;
+		else
+			cout << "No such id" << endl;
+		delete hhhh;
+		break;
+	case 5:
+		cout << "Working with test file" << endl;
+		in.open("testq.txt");
+		out.open("77.bin", ios_base::binary);
+		textToBin(in, out);
+		in.close();
+		out.close();
+		hhhh = new HashTale("77.bin");
+
+		formTAbleFromFile(*hhhh, "77.bin");
+
+		cout << "Your table before rehashing" << endl;
+		hhhh->PrintTable();
+
+		hhhh->rehash_dontWrite();
+
+		cout << "Your table after rehashing" << endl;
+		hhhh->PrintTable();
+
+		delete hhhh;
+		break;
+
+	case 6:
+		cout << "Full test table" << endl;
+		hhhh = new HashTale("NewBin.bin");
+		hhhh->testHeshT();
+		break;
+		
+	case 7:
+		cout << "Working with test file" << endl;
+		in.open("testq.txt");
+		out.open("77.bin", ios_base::binary);
+		textToBin(in, out);
+		in.close();
+		out.close();
+		hhhh = new HashTale("77.bin");
+
+		formTAbleFromFile(*hhhh, "77.bin");
+
+		cout << "Your table" << endl;
+		hhhh->PrintTable();
+
+		break;
+	case 8:
+		cout << "Enter file name (read from)" << endl;
+		cin >> s;
+		in.open(s);
+		if (in.is_open()) {
+			cout << "Enter file name (write to)" << endl;
+			cin >> s;
+			out.open(s, ios_base::binary);
+			textToBin(in, out);
+		}
+		in.close();
+		out.close();
+		cout << "Your binary file" << endl;
+		printBin(s);
+
+		break;
+	case 9:
+		cout << "Enter file name" << endl;
+		cin >> s;
+		printBin(s);
+		break;
+
+	case 10:
+		in.close();
+		out.close();
+		cout << "Enter file name" << endl;
+		cin >> s;
+		cout << "Enter position" << endl;
+		cin >> pos;
+		in.open(s, ios_base::binary);
+		t.id = -1;
+		getDataBin(s, pos, t);
+		if (t.id != -1) {
+			cout << "Taxi info\n";
+			cout << t.id << " " << t.isInGarage << " ";
+			for (int i = 0; i < 40; i++) {
+				cout << t.name[i];
+			}
+			for (int i = 0; i < 5; i++) {
+				cout << t.time[i];
+			}
+			cout << endl;
+		}
+		else cout << "Wrong number\n";
+		break;
+	case 11:
+		in.open("testq.txt");
+		out.open("testq.bin", ios_base::binary);
+		textToBin(in, out);
+		in.close();
+		out.close();
+		cout << "Enter file name" << endl;
+		cin >> s;
+		cout << "Enter key" << endl;
+		cin >> pos;
+		delDataBinOnID(s, pos);
+		cout << "File after deletion" << endl;
+		printBin(s);
+		break;
+	case 12:
+		in.open("testq.txt");
+		out.open("testq.bin", ios_base::binary);
+		textToBin(in, out);
+		in.close();
+		out.close();
+		cout << "Working with test file" << endl;
+		cout << "Enter file name" << endl;
+		cin >> s;
+		cout << "Enter positiom write to" << endl;
+		cin >> i1;
+
+		cout << "Writing this taxi" << endl;
+		cout << bbbub.id << " " << bbbub.isInGarage << " ";
+		for (int i = 0; i < 40; i++)
+			cout << bbbub.name[i];
+		for (int i = 0; i < 5; i++)
+			cout << bbbub.time[i];
+		cout << endl;
+
+		writeTonPlace(s, i1, bbbub);
+
+		cout << "File after writing" << endl;
+		printBin(s);
+
+		break;
+	case 13:
+		cout << "Testing bin file functions" << endl;
+		testBinF();
+		break;
+
+	case 14:
+		cout << "Working with test file:" << endl;
+		in.open("testq.txt");
+		out.open("testq.bin", ios_base::binary);
+		textToBin(in, out);
+		in.close();
+		out.close();
+		printBin("testq.bin");
+
+		hhhh = new HashTale("testq.bin");
+
+		cout << "Enter potition in file to write it in table " << endl;
+		cin >> i1;
+
+		readBinAddTab1(*hhhh, i1, "testq.bin");
+		
+		cout << "Your table" << endl;
+		hhhh->PrintTable();
+
+		delete hhhh;
+		break;
+	case 15:
+		in.open("testq.txt");
+		out.open("testq.bin", ios_base::binary);
+		textToBin(in, out);
+		in.close();
+		out.close();
+		cout << "Working with test file" << endl;
+		hhhh = new HashTale("testq.bin");
+
+		formTAbleFromFile(*hhhh, "testq.bin");
+
+		cout << "Enter key to delete " << endl;
+		cin >> i1;
+
+		delTAbleDelPlikID(i1, *hhhh, "testq.bin");
+		cout << "Your file after deletion" << endl;
+		printBin("testq.bin");
+		cout << "Your table after deletion" << endl;
+		hhhh->PrintTable();
+		delete hhhh;
+		break;
+	case 16:
+		in.open("testq.txt");
+		out.open("ffffffff.bin", ios_base::binary);
+		textToBin(in, out);
+		in.close();
+		out.close();
+		cout << "Working with test file" << endl;
+		hhhh = new HashTale("ffffffff.bin");
+
+		formTAbleFromFile(*hhhh, "ffffffff.bin");
+
+		cout << "Enter key to find " << endl;
+		cin >> i1;
+		t.id = -1;
+		getelem(i1,t,*hhhh);
+
+		if (t.id != -1) {
+			cout << t.id << " " << t.isInGarage << " ";
+			for (int i = 0; i < 40; i++) {
+				cout << t.name[i];
+			}
+			for (int i = 0; i < 5; i++) {
+				cout << t.time[i];
+			}
+			cout << endl;
+		}
+		else {
+			cout << "No such ID";
+		}
+		delete hhhh;
+		break;
+	case 17:
+		in.open("degrodation_test.txt");
+		out.open("1212.bin", ios_base::binary);
+		textToBin(in, out);
+		in.close();
+		out.close();
+
+		cout << "Working with big test file" << endl;
+		hhhh = new HashTale("1212.bin");
+
+		formTAbleFromFile(*hhhh, "1212.bin");
+
+		cout << "Testing time" << endl;
+		start = std::chrono::steady_clock::now();
+		getelem(1, wefew, *hhhh);
+		end = std::chrono::steady_clock::now();
+		elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
+		std::cout << "Time = " << elapsed.count() << endl;
+
+
+		 start = std::chrono::steady_clock::now();
+		getelem(150000, wefew, *hhhh);
+		 end = std::chrono::steady_clock::now();
+		 elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
+		std::cout << "Time = " << elapsed.count() << endl;
+
+
+		 start = std::chrono::steady_clock::now();
+		getelem(490000, wefew, *hhhh);
+		 end = std::chrono::steady_clock::now();
+		 elapsed = std::chrono::duration_cast<std::chrono::microseconds>(end - start) / 1000.0;
+		std::cout << "Time = " << elapsed.count() << endl;
+		break;
+	default:
+		break;
+	}
 
 }
 

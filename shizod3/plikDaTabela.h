@@ -6,8 +6,10 @@
 #include "hash.h"
 
 void readBinAddTab1(HashTale& hh, int pos, string filename) {
-	taxi t;
+	taxi t(-1);
 	getDataBin(filename, pos, t);
+	if (t.id == 0 || t.id == -1)
+		return;
 	hh.add(t.id, pos);
 }
 

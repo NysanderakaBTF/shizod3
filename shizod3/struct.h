@@ -334,6 +334,7 @@ void delDataBinOnID(string& f, int id) {
 		t.push_back(buf);
 	}
 	taxi deleted(-1);
+	file.close();
 	file.open(f, ios::binary | ios::out);
 
 	for (int q = 0; q < t.size(); q++)
@@ -371,6 +372,10 @@ void testBinF() {
 	cout << "Got Bin" << endl;
 	out.close();
 	in.close();
+	printBin(ss);
+
+	delDataBinOnID(ss, 45);
+	cout << "Deleted id 45 ( special value for hash table)" << endl;
 	printBin(ss);
 
 	in.close(); out.close();

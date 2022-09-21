@@ -84,11 +84,15 @@ public:
 	}
 	pair<int, int> getelemT(int id) {
 		int place = hF(id);
-		for (int i = 0; i < tabl[place].size(); i++) {
-			if (tabl[place].at(i).first == id) {
-				return tabl[place].at(i);
+		if (!tabl[place].empty()) {
+		
+			for (int i = 0; i < tabl[place].size(); i++) {
+				if (tabl[place].at(i).first == id) {
+					return tabl[place].at(i);
+				}
 			}
 		}
+		return make_pair(-1, -1);
 	}
 
 	void PrintTable() {
@@ -119,7 +123,7 @@ public:
 			add(ids[q], q);
 			q++;
 		}
-		cout << "Formed tadle: " << endl;
+		cout << "Formed tadle (rehashed): " << endl;
 		PrintTable();
 
 		cout <<"Deleting id 2";
